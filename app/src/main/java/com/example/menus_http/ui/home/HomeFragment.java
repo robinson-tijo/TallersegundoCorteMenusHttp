@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
         editTextContrasena = v.findViewById(R.id.editTextContrasena);
         buttonRegistrarUsuario = v.findViewById(R.id.buttonRegistrarUsuario);
         iniciarFirebase();
-        
+
 
         
 
@@ -71,6 +71,33 @@ public class HomeFragment extends Fragment {
         return v;
     }
 
+    public void validarCampos(){
+        String nombre = editTextNombre.getText().toString();
+        String apellido = editTextApellido.getText().toString();
+        String cedula = editTextCedula.getText().toString();
+        String telefono = editTextTelefono.getText().toString();
+        String correo = editTextApellido.getText().toString();
+        String contrasena = editTextCedula.getText().toString();
+        if( nombre.equals("") || apellido.equals("") || cedula.equals("") || telefono.equals("")
+                || correo.equals("") || contrasena.equals("")){
+
+            Toast.makeText(getActivity().getApplicationContext(),"PORFAVOR LLENAR TODOS LOS CAMPOS",Toast.LENGTH_SHORT).show();
+
+        }else{
+
+            Usuario usuario = new Usuario();
+            usuario.setNombre(nombre);
+            usuario.setApellido(apellido);
+            usuario.setCedula(Integer.parseInt(cedula));
+            usuario.setTelefono(Integer.parseInt(telefono));
+            usuario.setCorreo(correo);
+            usuario.setContrasena(contrasena);
+            myRef.child("usuario").child(usuario.getNombre()).setValue(usuario);
+            Toast.makeText(getActivity().getApplicationContext(),"Se registro correctamente: "+ nombre,Toast.LENGTH_SHORT).show();
+            limpiarCampos();
+
+        }
+    }
 
 
     private void iniciarFirebase() {
@@ -80,7 +107,7 @@ public class HomeFragment extends Fragment {
         myRef = database.getReference("Usuarios");
         Toast.makeText(getActivity().getApplicationContext(),"Dentro a direbase",Toast.LENGTH_SHORT).show();
 
-        //myRef.setValue("hola");
+        myRef.setValue("hola");
     }
 
 
