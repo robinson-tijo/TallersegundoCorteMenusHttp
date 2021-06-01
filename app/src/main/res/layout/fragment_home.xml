@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:hint="Apellido"
+                android:hint="Apellido "
                 android:layout_marginTop="20dp"/>
 
             <EditText
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="phone"
-                android:hint="Telefono"
+                android:hint="Telefono "
                 android:layout_marginTop="20dp"/>
 
 
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textEmailAddress"
-                android:hint="Correo"
+                android:hint="Correo "
                 android:layout_marginTop="20dp"/>
 
             <EditText
@@ -81,14 +81,14 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPassword"
-                android:hint="Contraseña"
+                android:hint="Contraseña "
                 android:layout_marginTop="20dp"/>
 
             <Button
                 android:id="@+id/buttonRegistrarUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Registrar Usuario" />
+                android:text="REGISTRAR USUARIO" />
 
 
     </LinearLayout>
